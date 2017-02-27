@@ -1273,7 +1273,5 @@ button,
           transform: translateY(100%); }
 
 @media screen and (max-width: 47.9375em) {
-  .spacer-bars--horizontal {
-    display: none; }
   .brew {
     padding: 4.6875em 1.25em 1.25em; } }
