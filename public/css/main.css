@@ -925,7 +925,8 @@ button,
     display: block;
     border-top: 2px solid #fff;
     width: 0; }
-  .site-nav-menu-link:hover:after {
+  .site-nav-menu-link:hover:after,
+  .active .site-nav-menu-link:after {
     width: 100%; }
 
 @media screen and (max-width: 59.9375em) {

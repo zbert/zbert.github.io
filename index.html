@@ -20,7 +20,7 @@
     
   </head>
   <body class="page-index">
-    <header class="site-header js-site-header">
+    <header id="site-header" class="site-header js-site-header">
 
 	<a class="site-logo" href="/">
 		<img alt="" class="site-logo-img" src="./public/images/logo.svg">
@@ -37,16 +37,28 @@
 </header>
 
 
-<nav id="site-nav" class="site-nav">
+<nav id="site-nav" class="site-nav js-site-nav">
 
 	<div class="site-nav-wrapper">
-		<ul class="site-nav-menu">
-			<li class="site-nav-menu-item"><a class="site-nav-menu-link" href="#beer">Alulu Craft Beer</a></li>
-			<li class="site-nav-menu-item"><a class="site-nav-menu-link" href="#food">Alulu Food</a></li>
-			<li class="site-nav-menu-item"><a class="site-nav-menu-link" href="#craft-cocktails">Alulu Craft Cocktails</a></li>
-			<li class="site-nav-menu-item"><a class="site-nav-menu-link" href="#contact-location">Contact &amp; Location</a></li>
-			<li class="site-nav-menu-item"><a class="site-nav-menu-link" href="#private-events">Private Events at Alulu</a></li>
-			<li class="site-nav-menu-item"><a class="site-nav-menu-link" href="#events">Alulu Events</a></li>
+		<ul id="site-nav-menu" class="site-nav-menu">
+			<li  data-menuanchor="beer" class=" site-nav-menu-item active">
+				<a class="site-nav-menu-link js-nav-link" href="#beer">Alulu Craft Beer</a>
+			</li>
+			<li  data-menuanchor="food" class=" site-nav-menu-item ">
+				<a class="site-nav-menu-link js-nav-link" href="#food">Alulu Food</a>
+			</li>
+			<li  data-menuanchor="craft-cocktails" class=" site-nav-menu-item ">
+				<a class="site-nav-menu-link js-nav-link" href="#craft-cocktails">Alulu Craft Cocktails</a>
+			</li>
+			<li  data-menuanchor="contact-location" class=" site-nav-menu-item ">
+				<a class="site-nav-menu-link js-nav-link" href="#contact-location">Contact &amp; Location</a>
+			</li>
+			<li  data-menuanchor="private-events" class=" site-nav-menu-item ">
+				<a class="site-nav-menu-link js-nav-link" href="#private-events">Private Events at Alulu</a>
+			</li>
+			<li  data-menuanchor="events" class=" site-nav-menu-item ">
+				<a class="site-nav-menu-link js-nav-link" href="#events">Alulu Events</a>
+			</li>
 		</ul>
 	</div>
 </nav>
@@ -55,7 +67,7 @@
 
     <div id="fullpage">
 
-        <section class="panel" id="beer">
+        <section class="panel" >
         
         	<div class="panel-bar">
         		<header class="panel-header">
@@ -176,7 +188,7 @@
         	<div class="panel-bg js-panel-bg" style="background-image: url('https://b922bde52f23a8481830-83cb7d8d544f653b52d1a1621f05ea9d.ssl.cf3.rackcdn.com/images/_1920x1296_crop_center-center/Rainbbow-mountains-desktop.jpg') "></div>
         	
         </section>
-        <section class="panel" id="food">
+        <section class="panel" >
         
         	<div class="panel-bar">
         		<h2 class="panel-header-subtitle">Intro Copy</h2>
@@ -201,7 +213,7 @@
         	<div class="panel-bg js-panel-bg" style="background-image: url('https://b922bde52f23a8481830-83cb7d8d544f653b52d1a1621f05ea9d.ssl.cf3.rackcdn.com/images/_1920x1296_crop_center-center/Quinta-da-Regaleira-Desktop-4.jpg') "></div>
         
         </section>
-        <section class="panel" id="cocktails">
+        <section class="panel">
         
         	<div class="panel-bar">
         		<header class="panel-header">
@@ -226,7 +238,7 @@
         	
         
         </section>
-        <section class="panel" id="contact-location">
+        <section class="panel" >
         
         	<div class="panel-bar">
         		<header class="panel-header">
@@ -251,7 +263,7 @@
         	
         
         </section>
-        <section class="panel" id="private-events">
+        <section class="panel" >
         
         	<div class="panel-bar">
         		<header class="panel-header">
@@ -276,7 +288,7 @@
         	
         
         </section>
-        <section class="panel" id="events">
+        <section class="panel" >
         
         	<div class="panel-bar">
         		<h2 class="panel-header-subtitle">Intro Copy</h2>
