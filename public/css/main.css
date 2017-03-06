@@ -1086,28 +1086,36 @@ button,
 
 .modal-overlay-content {
   height: 100%;
-  overflow-y: auto; }
+  overflow-y: auto;
+  overflow: relative; }
+  .modal-overlay-content html.touch {
+    -webkit-overflow-scrolling: touch; }
 
 @media screen and (max-width: 47.9375em) {
   .modal-overlay {
-    padding: 5.9375em 1.25em 5em; } }
+    padding: 5.9375em 1.25em 5em; }
+  .modal-overlay-content {
+    overflow-y: scroll;
+    /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch; } }
 
 .brew {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
   background: transparent no-repeat center center;
   -webkit-background-size: cover;
           background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 505;
   overflow: hidden;
-  padding: 8.75em 3.75em 3.75em;
+  padding: 0 40% 3.75em 3.75em;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.65s cubic-bezier(0.785, 0.135, 0.15, 0.86), visibility 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.65s;
-  transition: opacity 0.65s cubic-bezier(0.785, 0.135, 0.15, 0.86), visibility 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.65s; }
+  transition: opacity 0.65s cubic-bezier(0.785, 0.135, 0.15, 0.86), visibility 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.65s;
+  display: table; }
   .show-brew-overlay .brew {
     opacity: 1;
     visibility: visible;
@@ -1115,31 +1123,19 @@ button,
     transition: opacity 0.65s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.65s; }
 
 .brew-body {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  overflow-y: auto;
   max-width: 40.625em;
-  max-height: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
   opacity: 0;
-  -webkit-transform: translateY(-30%);
-      -ms-transform: translateY(-30%);
-          transform: translateY(-30%);
-  -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  padding-top: 12.5em;
+  -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
   .show-brew-overlay .brew-body {
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
     opacity: 1;
-    -webkit-transition: opacity 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    transition: opacity 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    transition: opacity 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), transform 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    transition: opacity 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), transform 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+    padding-top: 6.25em;
+    -webkit-transition: opacity 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.35s, padding-top 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.35s;
+    transition: opacity 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.35s, padding-top 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.35s; }
 
 .show-brew-overlay .panel {
   opacity: 0.2; }
@@ -1169,7 +1165,7 @@ button,
     .brew-taste,
     .brew-qualities,
     .brew-description {
-      font-size: 1.125em; } }
+      font-size: 1em; } }
 
 .brew-details {
   margin: 1.11111em 0; }
@@ -1287,4 +1283,23 @@ button,
   .spacer-bars--horizontal:before, .spacer-bars--horizontal:after {
     height: 0.625em; }
   .brew {
-    padding: 4.6875em 1.875em 1.875em; } }
+    padding: 1.25em 1.5625em 1.5625em; }
+  .show-brew-overlay .brew-body {
+    padding-top: 3.4375em; }
+  .brew-glass {
+    width: 2.5em; }
+  .brew-qualities {
+    margin-left: 3.25em; }
+  .brew-qualities-label {
+    width: 9.0625em; }
+  .brew-qualities-info {
+    margin-bottom: 0.3125em; }
+  .brew-share {
+    text-align: left;
+    max-width: 15.625em; }
+    .brew-share:after {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); } }
