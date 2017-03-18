@@ -1102,7 +1102,7 @@ button,
           background-size: cover;
   z-index: 505;
   overflow: hidden;
-  padding: 8.75em 2.5em 2.5em;
+  padding: 8.75em 3.75em 3.75em;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.65s cubic-bezier(0.785, 0.135, 0.15, 0.86), visibility 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.65s;
@@ -1114,7 +1114,7 @@ button,
     transition: opacity 0.65s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.65s; }
 
 .brew-body {
-  position: absolute;
+  position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -1207,8 +1207,8 @@ button,
 
 .brew-close {
   position: absolute;
-  right: 2.5em;
-  top: 2.5em;
+  right: 3.125em;
+  top: 3.125em;
   width: 2.25em;
   height: 2.25em;
   border: 2px solid #fff;
@@ -1273,5 +1273,17 @@ button,
           transform: translateY(100%); }
 
 @media screen and (max-width: 47.9375em) {
+  .brew-close {
+    position: absolute;
+    right: 1.5625em;
+    top: 1.5625em;
+    width: 1.875em;
+    height: 1.875em; }
+    .brew-close:before, .brew-close:after {
+      width: 15px; }
+  .spacer-bars--vertical:before, .spacer-bars--vertical:after {
+    width: 0.625em; }
+  .spacer-bars--horizontal:before, .spacer-bars--horizontal:after {
+    height: 0.625em; }
   .brew {
-    padding: 4.6875em 1.25em 1.25em; } }
+    padding: 4.6875em 1.875em 1.875em; } }
