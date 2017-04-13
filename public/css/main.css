@@ -188,12 +188,12 @@ input[type="checkbox"], input[type="radio"] {
           box-sizing: border-box;
   padding: 0; }
 
-.btn-call-to-action, .brew-disclaimer {
+.btn-call-to-action, .panel-header-title, .brew-disclaimer {
   text-transform: uppercase; }
 
 body {
   font-size: 100%;
-  font: 500 100% "Catamaran", Arial, sans-serif;
+  font: 500 100% "Rubik", sans-serif, Arial, sans-serif;
   line-height: 1.2;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -523,12 +523,12 @@ button,
 .btn-primary {
   font-size: 0.875em;
   line-height: 1.1;
-  font-weight: 800; }
+  font-weight: 900; }
 
 .btn-call-to-action {
   font-size: 0.875em;
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 900;
   color: #fff;
   position: relative;
   padding-left: 2.5625em; }
@@ -904,7 +904,7 @@ button,
 
 .beer-grid-type {
   display: block;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 0.875em;
   margin-top: 0.75em; }
 
@@ -1153,7 +1153,7 @@ button,
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 0.9375em;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1.4;
   right: 0;
   max-width: 18.75em; }
