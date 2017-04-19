@@ -882,7 +882,7 @@ button,
   overflow: hidden;
   z-index: 2;
   text-align: center;
-  min-height: 5.625em; }
+  min-height: 6.25em; }
 
 .beer-grid-name {
   display: inline-block;
@@ -1136,14 +1136,23 @@ button,
     .panel-header-title {
       font-size: 2em; } }
 
-.panel-header-subtitle {
+.panel-header-subtitle,
+.panel-header-copy {
   font-size: 1.25em;
   line-height: 1.1;
   margin: 0.4em 0;
   max-width: 42.5em; }
   @media screen and (max-width: 47.9375em) {
-    .panel-header-subtitle {
+    .panel-header-subtitle,
+    .panel-header-copy {
       font-size: 1em; } }
+
+.panel-header-copy {
+  line-height: 1.45; }
+
+.panel-header-copy a {
+  text-decoration: underline;
+  font-weight: 700; }
 
 .panel-cta {
   margin-top: 0.625em; }
@@ -1158,6 +1167,7 @@ button,
 
 .panel-header-title,
 .panel-header-subtitle,
+.panel-header-copy,
 .alulu-address {
   -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -1166,6 +1176,7 @@ button,
 
 .panel.show-modal-overlay .panel-header-title,
 .panel.show-modal-overlay .panel-header-subtitle,
+.panel.show-modal-overlay .panel-header-copy,
 .panel.show-modal-overlay .alulu-address {
   opacity: 0;
   visibility: hidden;
@@ -1271,9 +1282,6 @@ button,
     -webkit-overflow-scrolling: touch; } }
 
 .brew {
-  background: transparent no-repeat center center;
-  -webkit-background-size: cover;
-          background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -1345,6 +1353,9 @@ button,
     display: table;
     clear: both; }
 
+.brew-description {
+  max-width: 43.75em; }
+
 .brew-glass {
   float: left;
   width: 3.125em; }
@@ -1397,6 +1408,17 @@ button,
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg); }
+
+.brew-img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: transparent no-repeat center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  z-index: -1; }
 
 .spacer-bars:before, .spacer-bars:after {
   content: '';
