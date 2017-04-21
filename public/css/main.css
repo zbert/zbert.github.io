@@ -1148,11 +1148,29 @@ button,
       font-size: 1em; } }
 
 .panel-header-copy {
-  line-height: 1.45; }
+  line-height: 1.25; }
 
 .panel-header-copy a {
-  text-decoration: underline;
+  position: relative;
+  display: inline-block;
   font-weight: 700; }
+  .panel-header-copy a:before {
+    -webkit-transition: top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: -0.2em;
+    right: -0.2em;
+    content: '';
+    display: block;
+    top: 100%;
+    background-color: #fff;
+    z-index: -1; }
+  .panel-header-copy a:hover {
+    color: #1b1b1b; }
+    .panel-header-copy a:hover:before {
+      top: 0; }
 
 .panel-cta {
   margin-top: 0.625em; }
@@ -1310,6 +1328,8 @@ button,
   padding-top: 12.5em;
   -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  .brew-body > * {
+    text-shadow: 1px 1px 2px #000; }
   .show-brew-overlay .brew-body {
     opacity: 1;
     padding-top: 6.25em;
