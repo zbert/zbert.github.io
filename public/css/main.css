@@ -188,7 +188,7 @@ input[type="checkbox"], input[type="radio"] {
           box-sizing: border-box;
   padding: 0; }
 
-.btn-call-to-action, .panel-header-title, .brew-disclaimer {
+h2, .btn-call-to-action, .site-logo-tagline, .panel-header-title, .brew-disclaimer {
   text-transform: uppercase; }
 
 body {
@@ -206,18 +206,21 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
 h1 {
-  font-size: 2.625em;
-  line-height: 1.1; }
-
-h2 {
   font-size: 2.25em;
   line-height: 1.1; }
 
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.1; }
+
 h3 {
-  font-size: 1.875em; }
+  font-size: 1.5em;
+  font-weight: 700; }
 
 h4 {
-  font-size: 1.5em; }
+  font-size: 1.25em;
+  font-weight: 700; }
 
 h5 {
   font-size: 1.25em; }
@@ -228,15 +231,15 @@ h5 {
 
 @media screen and (max-width: 47.9375em) {
   h1 {
-    font-size: 2.25em; }
-  h2 {
     font-size: 1.875em; }
+  h2 {
+    font-size: 1.5em; }
   h3 {
-    font-size: 1.625em; }
+    font-size: 1.25em; }
   h4 {
     font-size: 1.125em; }
   h5 {
-    font-size: 1em; }
+    font-size: 1.125em; }
   .body-copy {
     font-size: 1em; } }
 
@@ -529,6 +532,7 @@ button,
   font-size: 1em;
   line-height: 1.1;
   font-weight: 700;
+  display: inline-block;
   color: #fff;
   position: relative;
   padding-left: 2.5625em; }
@@ -862,7 +866,8 @@ button,
           animation-delay: 0.25s; }
 
 .beer-grid-heading {
-  margin-bottom: 0.2em; }
+  margin-bottom: 1.25em;
+  text-align: center; }
 
 .beer-grid-list {
   margin-top: 1.25em;
@@ -924,6 +929,40 @@ button,
        -moz-columns: auto;
             columns: auto; } }
 
+.craft-cocktails {
+  -webkit-columns: 2 auto;
+     -moz-columns: 2 auto;
+          columns: 2 auto;
+  -webkit-column-gap: 0.9375em;
+     -moz-column-gap: 0.9375em;
+          column-gap: 0.9375em; }
+
+.craft-cocktails-heading {
+  margin-bottom: 1.25em; }
+
+.craft-cocktails-section {
+  position: relative;
+  -webkit-column-break-inside: avoid;
+     page-break-inside: avoid;
+          break-inside: avoid;
+  overflow: hidden; }
+
+.craft-cocktails-list {
+  margin-top: 1.25em; }
+
+.craft-cocktails-item + .craft-cocktails-item {
+  margin-top: 1.25em; }
+
+.craft-cocktails-description {
+  display: block;
+  line-height: 1.5; }
+
+@media screen and (max-width: 39.3125em) {
+  .craft-cocktails {
+    -webkit-columns: auto;
+       -moz-columns: auto;
+            columns: auto; } }
+
 .site-header {
   -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -942,11 +981,18 @@ button,
 
 .site-logo {
   display: inline-block;
-  width: 18.75em; }
+  width: 18.75em;
+  position: relative; }
 
 .site-logo-img {
   display: block;
   width: 100%; }
+
+.site-logo-tagline {
+  margin-top: 1em;
+  font-size: 0.875em;
+  display: inline-block;
+  font-weight: 700; }
 
 @media screen and (max-width: 59.9375em) {
   .site-logo {
@@ -1129,9 +1175,10 @@ button,
   z-index: 1; }
 
 .panel-header-title {
-  font-size: 2.5em;
+  font-size: 2.375em;
+  font-weight: 700;
   line-height: 1;
-  max-width: 21.25em; }
+  max-width: 22.36842em; }
   @media screen and (max-width: 47.9375em) {
     .panel-header-title {
       font-size: 2em; } }
@@ -1153,15 +1200,16 @@ button,
 .panel-header-copy a {
   position: relative;
   display: inline-block;
-  font-weight: 700; }
+  font-weight: 700;
+  border-bottom: 2px solid #fff; }
   .panel-header-copy a:before {
     -webkit-transition: top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transition: top 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     position: absolute;
     top: 100%;
     bottom: 0;
-    left: -0.2em;
-    right: -0.2em;
+    left: 0;
+    right: 0;
     content: '';
     display: block;
     top: 100%;
@@ -1173,7 +1221,7 @@ button,
       top: 0; }
 
 .panel-cta {
-  margin-top: 0.625em; }
+  margin-top: 1.25em; }
 
 .alulu-address {
   position: absolute;
@@ -1181,7 +1229,8 @@ button,
   font-weight: 300;
   line-height: 1.4;
   right: -1.25em;
-  max-width: 18.75em; }
+  max-width: 18.75em;
+  text-align: right; }
 
 .panel-header-title,
 .panel-header-subtitle,
