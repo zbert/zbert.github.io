@@ -532,14 +532,19 @@ button,
   font-size: 1em;
   line-height: 1.1;
   font-weight: 700;
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   display: inline-block;
   color: #fff;
   position: relative;
-  padding-left: 2.5625em; }
+  padding-left: 2.5625em;
+  text-align: left; }
   .btn-call-to-action:hover:after {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1); }
+    -webkit-transform: scale(1.1) translateY(-50%);
+        -ms-transform: scale(1.1) translateY(-50%);
+            transform: scale(1.1) translateY(-50%); }
   .btn-call-to-action:after, .btn-call-to-action:before {
     content: '';
     position: absolute; }
@@ -552,20 +557,27 @@ button,
     content: '+';
     font-size: 1.625em;
     line-height: 1;
-    left: 0.3em;
+    left: 0.275em;
     font-weight: 500; }
   .btn-call-to-action:after {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transition: -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transition: transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transition: transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     content: '';
     left: 0;
-    top: -0.35em;
     width: 1.875em;
     height: 1.875em;
     border: 2px solid #fff;
-    border-radius: 100%; }
+    border-radius: 100%;
+    -webkit-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%; }
 
 .menu-toggle {
   height: 3.4375em;
@@ -817,7 +829,7 @@ button,
 .logo-overlay-svg-wrapper {
   display: inline-block;
   width: 8.75em;
-  padding-bottom: 16.5%;
+  height: 11.125em;
   overflow: hidden;
   position: relative; }
 
@@ -864,6 +876,11 @@ button,
           animation: svg-animate-inverse 0.75s  ease-in-out forwards;
   -webkit-animation-delay: 0.25s;
           animation-delay: 0.25s; }
+
+@media screen and (max-width: 47.9375em) {
+  .logo-overlay-svg-wrapper {
+    width: 6.875em;
+    height: 8.75em; } }
 
 .beer-grid-heading {
   margin-bottom: 1.25em;
@@ -1187,7 +1204,7 @@ button,
 .panel-header-copy {
   font-size: 1.25em;
   line-height: 1.1;
-  margin: 0.4em 0;
+  margin: 0.4em 0 0;
   max-width: 42.5em; }
   @media screen and (max-width: 47.9375em) {
     .panel-header-subtitle,
@@ -1232,33 +1249,37 @@ button,
   max-width: 18.75em;
   text-align: right; }
 
-.panel-header-title,
+.panel-header,
 .panel-header-subtitle,
 .panel-header-copy,
 .alulu-address {
   -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  height: auto;
   -webkit-transition-duration: 1.3s;
           transition-duration: 1.3s; }
 
-.panel.show-modal-overlay .panel-header-title,
+.panel.show-modal-overlay .panel-header,
 .panel.show-modal-overlay .panel-header-subtitle,
 .panel.show-modal-overlay .panel-header-copy,
 .panel.show-modal-overlay .alulu-address {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), visibility 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), visibility 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  height: 0px;
+  -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), height 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 5s;
+  transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86), height 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86) 5s; }
 
 .panel.show-modal-overlay .btn-call-to-action:before {
   content: '—';
-  line-height: 0.5; }
+  font-size: 1.40625em; }
 
 @media screen and (max-width: 47.9375em) {
   .panel-bar {
     left: 1.25em;
     right: 1.25em;
-    bottom: 1.25em; } }
+    bottom: 1.25em; }
+  .alulu-address {
+    right: 0; } }
 
 @media screen and (max-width: 39.3125em) {
   .panel-bar {
@@ -1270,7 +1291,11 @@ button,
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
-    margin-top: 1.875em; } }
+    margin-top: 1.875em; }
+  .panel.show-modal-overlay .btn-call-to-action {
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%); } }
 
 .modal-overlay {
   position: absolute;
